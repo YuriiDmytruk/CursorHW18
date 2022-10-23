@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/CursorHW18/static/css/main.f1012798.css",
+    "main.js": "/CursorHW18/static/js/main.6893fe64.js",
+    "static/media/question.png": "/CursorHW18/static/media/question.d39d7899f83ce144d765.png",
+    "static/media/female.png": "/CursorHW18/static/media/female.9af6bcdd42a1a4cdeef1.png",
+    "index.html": "/CursorHW18/index.html",
+    "main.f1012798.css.map": "/CursorHW18/static/css/main.f1012798.css.map",
+    "main.6893fe64.js.map": "/CursorHW18/static/js/main.6893fe64.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f1012798.css",
+    "static/js/main.6893fe64.js"
+  ]
+}
