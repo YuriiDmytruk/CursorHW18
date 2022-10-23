@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "../Styles/Contacts.css";
 import Contact from "./Contact.js";
 import contacts from "../Scripts/Data.js";
 import filter from "../Scripts/Filter.js";
@@ -11,7 +12,7 @@ function Contacts() {
   });
 
   const handleSearchChange = (e) => {
-    let filtered = []
+    let filtered = [];
     if (
       e.target.value === "male" ||
       e.target.value === "female" ||
@@ -24,11 +25,10 @@ function Contacts() {
         state.specification.push(e.target.value);
       }
       filtered = filter(contacts, "", state.specification);
+    } else {
+      filtered = filter(contacts, e.target.value, state.specification);
     }
-    else{
-      filtered = filter (contacts, e.target.value, state.specification)
-    }
-    
+
     SetContacts({
       contacts: filtered,
       search: e.target.value,
@@ -37,32 +37,25 @@ function Contacts() {
   };
 
   return (
-    <div>
-      <input type="text" id="name" onChange={handleSearchChange} />
-      <input
-        type="checkbox"
-        id="male"
-        value="male"
-        onChange={handleSearchChange}
-      />
-      <label> Male</label>
-      <input
-        type="checkbox"
-        id="female"
-        value="female"
-        onChange={handleSearchChange}
-      />
-      <label> Female</label>
-      <input
-        type="checkbox"
-        id="not-specified"
-        value="not-specified"
-        onChange={handleSearchChange}
-      />
-      <label> Not specified</label>
-      {state.contacts.map((e) => (
-        <Contact contact={e} />
-      ))}
+    <div className="external">
+      <div>
+        <div className="middle">
+          <input type="text" id="name" onChange={handleSearchChange} />
+        </div>
+        <div className="middle">
+          <input type="checkbox" value="male" onChange={handleSearchChange} />
+          <label> Male</label>
+          <input type="checkbox" value="female" onChange={handleSearchChange} />
+          <label> Female</label>
+          <input type="checkbox" value="not-specified" onChange={handleSearchChange} />
+          <label> Not specified</label>
+        </div>
+        <div className="contacts">
+          {state.contacts.map((e) => (
+            <Contact contact={e} />
+          ))}
+        </div>
+      </div>
     </div>
   );
 }

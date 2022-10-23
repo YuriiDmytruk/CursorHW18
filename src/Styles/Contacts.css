@@ -1,0 +1,11 @@
+.external {
+    display: flex;
+    justify-content: center;
+}
+.middle {
+    display: flex;
+    justify-content: center;
+}
+.contacts{
+    text-align: center;
+}
